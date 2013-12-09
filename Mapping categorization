@@ -1,0 +1,8 @@
+PUT /ir/doc/_mapping
+{
+   "doc": {
+      "properties": {
+         "category": {"type": "string"}
+      }
+   }
+}
