@@ -1,0 +1,22 @@
+GET ir/_search
+{
+    "query": {
+        "filtered": {
+            "query": {
+                "query_string": {
+                    "query": "handicap"
+                }
+            },
+            "filter": {
+                "not": {
+                    "filter": {
+                        "term": {
+                            "category": "personal OR picture OR "
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "size": 20
+}
