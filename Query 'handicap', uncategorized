@@ -1,0 +1,8 @@
+GET ir-basic/_search
+{
+    "query": {
+        "query_string": {
+            "query": "handicap"
+        }
+    }
+}
