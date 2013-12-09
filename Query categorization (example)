@@ -1,0 +1,23 @@
+POST /ir/_update_by_query
+{
+    "query": {
+        "filtered": {
+            "query": {
+                "match": {
+                    "url": "~mka410"
+                }
+            },
+            "filter": {
+                "not": {
+                    "filter": {
+                        "term": {
+                            "category": "personal OR picture OR news"
+                        }
+                    }
+                }
+            }
+            
+        }
+    },
+    "script": "ctx._source.category = 'personal'"
+}
